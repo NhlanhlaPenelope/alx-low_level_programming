@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
-* main - Retry point
-* Return always 0 (Success)
-*/
+ * main - Entry point
+ * Return : Always 0 (Success)
+ */
+
 int main(void)
 {
 	char c;
@@ -11,12 +12,12 @@ int main(void)
 
 	c = 'a';
 	d = 'A';
-	while
+	while 
 		(c <= 'z') {
-			putchar (d);
+			putchar(c);
 			c++;
 		}
-	while
+	while 
 		(d <= 'z') {
 			putchar (d);
 			d++;
