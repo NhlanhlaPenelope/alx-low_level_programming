@@ -1,7 +1,6 @@
 #include<stdio.h>
 
 /**
-*
 * main - Entry poit
 *
 * Description: print all possible different
@@ -12,7 +11,7 @@
 
 int main(void)
 {
-	int digit1= 0, digit2;
+	int digit1 = 0, digit2;
 
 	while (digit1 <= 9)
 	{
