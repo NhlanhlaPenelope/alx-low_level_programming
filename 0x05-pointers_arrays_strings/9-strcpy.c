@@ -1,24 +1,22 @@
 #include "main.h"
 
 /**
- * char *_strcpy - a function that copies the string pointed to by src
- * @dest: copy to
- * @src: copy from
- * Return: string
+ * puts_half - print second half of a string
+ * @str: char array string type
+ * Description: if odd number of chars, print (length - 1) / 2
  */
-char *_strcpy(char *dest, char *src)
-{
-	int 1 = 0;
-	int x = 0;
 
-	while (*(src + 1) != '\0')
+void puts_half(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		;
+
+	i++;
+	for (i /= 2; str[i] != '\0'; i++)
 	{
-		1++;
+		_putchar(str[i]);
 	}
-	for ( ; x < 1 ; x++)
-	{
-		dest[x] = src[x];
-	}
-	dest[1] = '\0';
-	return (dest);
+	_putchar('\n');
 }
