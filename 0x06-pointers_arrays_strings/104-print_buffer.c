@@ -10,7 +10,7 @@
 
 void print_buffer(char *b, int size)
 {
-	int 0, j, i;
+	int o, j, i;
 
 	o = 0;
 
@@ -42,9 +42,9 @@ void print_buffer(char *b, int size)
 			{
 				c = '-';
 			}
-			printf("%c", c)
+			printf("%c", c);
 		}
 		printf("\n");
-		0 += 10;
+		o += 10;
 	}
 }
