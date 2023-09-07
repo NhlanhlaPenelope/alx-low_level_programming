@@ -2,19 +2,43 @@
 #include "main.h"
 
 /**
- * *malloc_checked - allocates memory using malloc
- * @b: number of bytes to allocate
+ * *_realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previosly allocated by malloc
+ * @old_size: size of the allocated memory for ptr
+ * @new_size: new size of the new memory block
  *
- * Return: a pointer to the allocated memory
+ * Return: pointer to the newly allocated memory block
  */
-void *malloc_checked(unsigned int b)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *ptr;
+	char *ptr1;
+	char *old_ptr;
+	unsigned int i;
 
-	ptr = malloc(b);
+	if (new_size == old_size)
+		return (ptr);
 
-	if (ptr == NULL)
-		exit(98);
+	if (new_size == 0 && ptr)
+	{
+		free(ptr);
+		return (NULL);
+	}
 
-	return (ptr);
+	if (!ptr)
+		return (malloc(new_size));
+
+	ptr1 = malloc(new_size);
+	if (!ptr1)
+		return (NULL);
+
+	old_ptr = ptr;
+
+	if (new_size < old_size)
+	{
+		for (i = 0; i < new_size; i++)
+			ptr1[i] = old_ptr[i];
+	}
+
+	free(ptr);
+	return (ptr1);
 }
